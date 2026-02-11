@@ -69,15 +69,16 @@ services:
       BACKUP_PRUNING_PREFIX: "backup-"
       BACKUP_RETENTION_DAYS: "14"
       TZ: "UTC"
-      # Google Drive Configuration
-      GOOGLE_DRIVE_FOLDER_ID: "${GOOGLE_DRIVE_FOLDER_ID}"
-      GOOGLE_DRIVE_CREDENTIALS_JSON_FILE: "/secrets/google-drive-credentials.json"
+      # WebDAV Configuration
+      WEBDAV_URL: "${WEBDAV_URL}"
+      WEBDAV_USERNAME: "${WEBDAV_USERNAME}"
+      WEBDAV_PASSWORD: "${WEBDAV_PASSWORD}"
     volumes:
       - ./data/pgdata:/backup/pgdata:ro
       - ./data/labelstudio_data:/backup/labelstudio_data:ro
       - ./data/projects:/backup/projects:ro
       - ./backups:/archive
-      - ./backups/google-drive-credentials.json:/secrets/google-drive-credentials.json:ro
+
       - /var/run/docker.sock:/var/run/docker.sock:ro
     depends_on:
       - db
