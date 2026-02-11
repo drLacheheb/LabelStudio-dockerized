@@ -51,7 +51,7 @@ Access the admin panel at `http://localhost:81`. Use it to configure domains (Pr
 
 The `backup` service uses [offen/docker-volume-backup](https://github.com/offen/docker-volume-backup) to create compressed tarballs of the data volumes.
 
-- **Storage**: Backups are saved to `./backups` on the host.
+- **Storage**: Backups are saved to `./backups` on the host AND uploaded to **WebDAV** (configurable).
 - **Schedule**: Defined by `CRON_SCHEDULE` in `.env` (Default: Daily at 2am).
 - **Retention**: Keeps backups for 14 days (configurable via `BACKUP_RETENTION_DAYS`).
 - **Consistency**: To ensure data consistency, the `labelstudio` and `db` containers are **briefly stopped** during the backup process.
