@@ -71,7 +71,7 @@ services:
       TZ: "UTC"
       # Google Drive Configuration
       GOOGLE_DRIVE_FOLDER_ID: "${GOOGLE_DRIVE_FOLDER_ID}"
-      GOOGLE_APPLICATION_CREDENTIALS: "/secrets/google-drive-credentials.json"
+      GOOGLE_DRIVE_CREDENTIALS_JSON_FILE: "/secrets/google-drive-credentials.json"
     volumes:
       - ./data/pgdata:/backup/pgdata:ro
       - ./data/labelstudio_data:/backup/labelstudio_data:ro
